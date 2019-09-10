@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=FirstMethod
+comment0.text=\r\n\ FirstMethod\ *\r\n\ Emily\ Greene\r\n\ 819\r\n
+comment1.params=
+comment1.target=FirstMethod()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ FirstMethod\r\n
+comment2.params=a\ b
+comment2.target=int\ add(int,\ int)
+comment3.params=a\ b
+comment3.target=int\ subtract(int,\ int)
+comment4.params=a\ b
+comment4.target=int\ multiply(int,\ int)
+comment5.params=a\ b
+comment5.target=int\ divide(int,\ int)
+comment6.params=a\ b
+comment6.target=int\ greaterThan(int,\ int)
+comment7.params=
+comment7.target=void\ main()
+numComments=8

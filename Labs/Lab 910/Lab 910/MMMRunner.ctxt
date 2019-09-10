@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MMMRunner
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MMMRunner\ here.\r\n\r\n\ @author\ (Emily\ Greene)\r\n\ @version\ (910)\r\n
+comment1.params=
+comment1.target=MMMRunner()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MMMRunner\r\n
+comment2.params=
+comment2.target=void\ loadArray()
+comment3.params=
+comment3.target=void\ printArray()
+comment4.params=
+comment4.target=int\ getSum()
+numComments=5

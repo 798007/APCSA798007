@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=FirstClass
+comment0.text=\r\n\ FirstClass\ *\r\n\ Emily\ Greene\r\n\ 815\r\n
+comment1.params=
+comment1.target=FirstClass()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ FirstClass\r\n
+comment2.params=name\ n
+comment2.target=void\ printName(java.lang.String,\ int)
+comment3.params=
+comment3.target=void\ main()
+numComments=4
