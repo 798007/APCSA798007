@@ -10,7 +10,6 @@ public class Person
     String fName, mName, lName;
     public Person(String fullName){
         parseName(fullName);
-        System.out.print(fullName);
     }
     public void parseName(String fullName){
         int comma = fullName.indexOf(",");
@@ -40,5 +39,9 @@ public class Person
             lName = fullName.substring(space+1);
             mName = "";
         }
+        
+        System.out.println("First name: " + fName);
+        System.out.println("Middle name: " + mName);
+        System.out.println("Last Name: " +lName);
      }
 }
