@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Person here.
+ * Person
  *
  * @author (Emily Greene)
  * @version (924)
@@ -16,24 +16,29 @@ public class Person
         int comma = fullName.indexOf(",");
         int space = fullName.indexOf(" ");
         int space2 = fullName.lastIndexOf(" ");
-        
-        if(comma == -1 & fullName.lastIndexOf(" ") == fullName.indexOf(" ")){ 
-            fName = fullName.substring(0, space);
-            lName = fullName.substring(space+1);
-            mName = "";
-        }else{
+        //format one
+        if(comma != -1 & space != space2){ //format one
+            lName = fullName.substring(0, comma);
+            fName = fullName.substring(comma+1, space2);
+            mName = fullName.substring(space2);
+        }
+        //format two
+        if(comma != -1 & space == space2){
             lName = fullName.substring(0, comma);
             fName = fullName.substring(comma + 2);
             mName = "";
         }
-        if(fullName.lastIndexOf(" ") != fullName.indexOf(" ") & comma == -1){
+        //format three
+        if(space != space2 & comma == -1){
             fName = fullName.substring(0, space);
             mName = fullName.substring(space+1, space2);
             lName = fullName.substring(space2+1);
-        }else{
-            lName = fullName.substring(0, comma);
-            fName = fullName.substring(comma+1, space2);
-            mName = fullName.substring(space2);
-       }
-    }
+        }
+        //format four
+        if(comma == -1 & space == space2){ 
+            fName = fullName.substring(0, space);
+            lName = fullName.substring(space+1);
+            mName = "";
+        }
+     }
 }

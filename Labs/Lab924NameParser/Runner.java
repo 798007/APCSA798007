@@ -12,10 +12,12 @@ public class Runner{
         Scanner kb = new Scanner(System.in);
         String inputStr = ""; 
         while(!inputStr.equals("quit")){
+            System.out.println("");
             System.out.println("Enter a name or type \"quit\" to quit");
             inputStr = kb.nextLine();
-            System.out.println(inputStr);
-            Person person = new Person(inputStr);
+            if(!inputStr.equals("quit")){
+                Person person = new Person(inputStr);
+            }
         }
     }
 }
