@@ -16,7 +16,7 @@ public class Person
         int space = fullName.indexOf(" ");
         int space2 = fullName.lastIndexOf(" ");
         //format one
-        if(comma != -1 & space != space2){ //format one
+        if(comma != -1 & space != space2){
             lName = fullName.substring(0, comma);
             fName = fullName.substring(comma+1, space2);
             mName = fullName.substring(space2);
