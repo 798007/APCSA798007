@@ -6,7 +6,7 @@
  *</li><li>
  * 		Will transform statements as well as react to keywords
  *</li></ul>
- * @author Laurie White
+ * @author Emily Greene
  * @version April 2012
  *
  */

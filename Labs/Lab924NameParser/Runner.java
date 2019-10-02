@@ -11,16 +11,16 @@ public class Runner{
     public static void main(){
         Scanner kb = new Scanner(System.in);
         String inputStr = ""; 
-        Person[] p = new Person[2];
+        Person[] persons = new Person[2];
         while(!inputStr.equals("quit")){
             System.out.println("");
             System.out.println("Enter a name or type \"quit\" to quit");
             inputStr = kb.nextLine();
             if(!inputStr.equals("quit")){
                 Person person = new Person(inputStr);
-                for(int i = 0; i < p.length; i++){
-                    p[i] = person;
-                    System.out.println(p);
+                for(int i = 0; i < persons.length; i++){
+                    persons[i] = person;
+                    System.out.println(persons[i] + ", ");
                 }
             }
         }
@@ -31,6 +31,7 @@ public class Runner{
         for(int i = 0; i < p.length; i++){
             p2[i] = p[i];
         }
+        Person[] persons = p2;
         return p2;
     }
     //prints every name in the person list
