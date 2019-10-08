@@ -30,7 +30,7 @@ public class Magpie3
     public String getResponse(String statement)
     {
         String response = "";
-        if (statement.indexOf("no") >= 0)
+        if (findKeyword(statement, "no") >= 0)
         {
             response = "Why so negative?";
         }
@@ -38,40 +38,40 @@ public class Magpie3
         {
             response = "Say something, please.";
         }
-        else if (statement.indexOf("mother") >= 0
-                || statement.indexOf("father") >= 0
-                || statement.indexOf("sister") >= 0
-                || statement.indexOf("brother") >= 0)
+        else if (findKeyword(statement, "mother") >= 0
+                || findKeyword(statement, "father") >= 0
+                || findKeyword(statement, "sister") >= 0
+                || findKeyword(statement, "brother") >= 0)
         {
             response = "Tell me more about your family.";
         }
-        else if (statement.indexOf("dog") >= 0
-                || statement.indexOf("cat") >=0)
+        else if (findKeyword(statement, "dog") >= 0
+                || findKeyword(statement, "cat") >= 0)
         {
             response = "Tell me more about your pets.";
         }
-        else if (statement.indexOf("Mr.") >= 0)
+        else if (findKeyword(statement, "Mr.") >= 0) 
         {
             response = "He sounds like a good teacher.";
         }
-        else if (statement.indexOf("Mrs.") >= 0
-                || statement.indexOf("Ms.") >=0)
+        else if (findKeyword(statement, "Mrs.") >= 0
+                || findKeyword(statement, "Ms.") >= 0)
         {
             response = "She sounds like a good teacher.";
         }
-        else if (statement.indexOf("school") >=0
-                || statement.indexOf("class") >=0)
+        else if (findKeyword(statement, "school") >= 0
+                || findKeyword(statement, "class") >= 0)
         {
             response = "What school do you go to?";
         }
-        else if (statement.indexOf("hungry") >=0
-                || statement.indexOf("food") >=0
-                || statement.indexOf("eat") >=0)
+        else if (findKeyword(statement, "hungry") >= 0
+                || findKeyword(statement, "food") >= 0
+                || findKeyword(statement, "eat") >= 0)
         {
             response = "What is your favorite food?";
         }
-        else if (statement.indexOf("car") >=0
-                || statement.indexOf("truck") >=0)
+        else if (findKeyword(statement, "car") >= 0
+                || findKeyword(statement, "truck") >= 0)
         {
             response = "Do you like driving?";
         }
