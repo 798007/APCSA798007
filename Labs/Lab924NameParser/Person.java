@@ -19,7 +19,7 @@ public class Person
         if(comma != -1 & space != space2){
             lName = fullName.substring(0, comma);
             fName = fullName.substring(comma+1, space2);
-            mName = fullName.substring(space2);
+            mName = fullName.substring(space2 + 1);
         }
         //format two
         if(comma != -1 & space == space2){
