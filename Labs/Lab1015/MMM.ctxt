@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MMM
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MMM\ here.\r\n\r\n\ @author\ (Emily\ Greene)\r\n\ @version\ (1015)\r\n
+comment1.params=
+comment1.target=MMM()
+comment2.params=
+comment2.target=void\ loadArrayList()
+comment3.params=
+comment3.target=void\ printArray()
+comment4.params=
+comment4.target=void\ mean()
+numComments=5
