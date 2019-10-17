@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 /**
  * Write a description of class MMM here.
  *
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  */
 public class MMM
 {
-    ArrayList<Integer> nums = new ArrayList<Integer>();
+    static ArrayList<Integer> nums = new ArrayList<Integer>();
     public MMM()
     {
         
@@ -34,11 +35,32 @@ public class MMM
             }
         }
     }
-    public static void mean(){
-    
+    //prints the sum of all of the numbers in the array
+    public int sum(){
+        int sum = 0;
+        for(int i=0; i<nums.size(); i++){
+            sum = sum + nums.get(i);
+        }
+        System.out.println(sum);
+        return sum;
     }
     
     
-    
+    //prints out the mean of the array
+    public static double mean(){
+        int sum = 0;
+        for(int i=0; i<nums.size(); i++){
+            sum = sum + nums.get(i);
+        }
+        System.out.println(sum/nums.size());
+        return sum/nums.size();
+    }
+    //prints the median of the array
+    public double median(){
+        Collections.sort(nums);
+        double median = (nums.get(49) + nums.get(50))/2;
+        System.out.println(median);
+        return median;
+    }  
 }
 
