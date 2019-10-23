@@ -8,8 +8,8 @@ import java.util.*;
 public class SortTester
 {
     static ArrayList<Integer> numList = new ArrayList<Integer>();
-    static int compares = 0;
-    static int swaps = 0;
+    static int compares;
+    static int swaps;
     public SortTester()
     {
        
@@ -43,23 +43,35 @@ public class SortTester
         compares = 0;
         swaps = 0;
         for(int i = 1; i < numList.size(); i++){
-            for(int j = i; j > 0; j--){
-                compares += 1;
-                if(numList.get(j) < numList.get(j-1)){
-                    swap(j, j-1);
-                    swaps += 1;
-                }
+            int j = i;
+            while(j > 0 && numList.get(j) < numList.get(j-1)){
+                swap(j, j-1);
+                swaps +=1;
+                compares +=1;
+                j = j-1;
             }
+            compares += 1;
         }
         System.out.println("InsertSort number of compares: " + compares);
         System.out.println("InsertSort number of swaps: " + swaps);
     }
     //select sort code
-    //89, 61, 57, 66
     public static void selectSort(){
-    
-    
-    
+        compares = 0;
+        swaps = 0;
+        for(int i = 0; i < numList.size() - 1; i++){
+            int index = i;
+            for(int j = i + 1; j < numList.size(); j++){
+                if(numList.get(j) < numList.get(index)){
+                    index = j;
+                }
+                compares += 1;
+            }
+            swap(index, i);
+            swaps += 1;
+        }
+        System.out.println("SelectSort number of compares: " + compares);
+        System.out.println("SelectSort number of swaps: " + swaps);
     }
     //swapping code
     public static void swap(int i, int n){
@@ -73,15 +85,23 @@ public class SortTester
     }
     //prints the results
     public static void main(){
+        //BubbleSort results
         loadNumbers(10);
         System.out.println("BubbleSort original array:");
         printList();
         bubbleSort();
         printList();
+        //InsertSort results
         loadNumbers(10);
         System.out.println("\n InsertSort original array:");
         printList();
         insertSort();
+        printList();
+        //SelectionSort results
+        loadNumbers(10);
+        System.out.println("\n SelectSort original array:");
+        printList();
+        selectSort();
         printList();
     }
 }
