@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Student
  *
@@ -7,12 +7,14 @@
  */
 public class Student
 {
-    private String fName, mName, lName;
+    private String fullName;
     private int stuNumber;
     private double gpa;
-    public Student()
+    public Student(String name, int num, double GPA)
     {
-       
+       fullName = name;
+       stuNumber = num;
+       gpa = GPA;
     }
 
 }
