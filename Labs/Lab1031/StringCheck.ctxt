@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=StringCheck
+comment0.text=\r\n\ StringCheck\r\n\r\n\ @author\ (Emily\ Greene)\r\n\ @version\ (1031)\r\n
+comment1.params=
+comment1.target=StringCheck()
+comment2.params=
+comment2.target=void\ main()
+comment3.params=str\ key
+comment3.target=java.util.ArrayList\ wordChecker(java.lang.String[],\ java.lang.String)
+comment4.params=str\ key
+comment4.target=java.lang.String[]\ wordChecker(java.util.ArrayList,\ java.lang.String)
+numComments=5
