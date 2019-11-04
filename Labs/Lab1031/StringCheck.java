@@ -32,8 +32,14 @@ public class StringCheck
                 }
             }
         }
+        System.out.println("Arraylist to Array: ");
         wordChecker(words, keyword);
-        
+        String[] array = new String[words.size()];
+        for(int i = 0; i < words.size(); i++){
+            array[i] = words.get(i);
+        }
+        System.out.println("\nArray to Arraylist: ");
+        wordChecker(array, keyword);
     
     }
     public static ArrayList<String> wordChecker(String[] str, String key){
@@ -46,18 +52,19 @@ public class StringCheck
         for(int i = 0; i < list.size(); i++){
             System.out.print(list.get(i) + ", ");
         }
-        System.out.println(list);
         return list;
     }
     public static String[] wordChecker(ArrayList<String> str, String key){
-        String[] list = new String[numKey];
+        String[] list = new String[str.size()];
         for(int i = 0; i < str.size(); i++){
             if(str.get(i).indexOf(key) != -1){
                 list[i] = str.get(i);
             }
         }
         for(int i = 0; i < list.length; i++){
-            System.out.print(list[i] + ", ");
+            if(list[i] != null){
+                System.out.print(list[i] + ", ");
+            }
         }
         return list;
     }
