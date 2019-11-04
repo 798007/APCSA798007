@@ -1,14 +1,12 @@
 import java.util.*;
 /**
- * StringCheck
+ * Lab 1031: StringCheck
  *
  * @author (Emily Greene)
  * @version (1031)
  */
 public class StringCheck
 {
-    static int numWords = 0;
-    static int numKey = 0;
     public StringCheck()
     {
     }
@@ -21,16 +19,10 @@ public class StringCheck
         while(!inputStr.equals("done")){
             inputStr = kb.nextLine();
             words.add(inputStr);
-            numWords++;
         }
         if(inputStr.equals("done")){
             System.out.println("What keyword are you looking for?");
             keyword = kb.nextLine();
-            for(int i = 0; i < words.size(); i++){
-                if(words.get(i).indexOf(keyword) != -1){
-                    numKey++;
-                }
-            }
         }
         System.out.println("Arraylist to Array: ");
         wordChecker(words, keyword);
