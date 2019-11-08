@@ -17,7 +17,7 @@ public class StudList
         String inputName = "";
         int inputNumber;
         double inputGPA;
-        
+        //gets input information for each students' name, number, and gpa
         System.out.println("Student Name: ");
         inputName = kb.nextLine();
         
@@ -27,10 +27,12 @@ public class StudList
         System.out.println("Student GPA: ");
         inputGPA = kb.nextDouble();
         
-        
+        //creates a new student object loaded with the name, number, and gpa
         Student student = new Student(inputName, inputNumber, inputGPA);
+        //adds the new student object to the arraylist of student objects
         studentList.add(student);
     }
+    //prints out each student's name, number, and gpa
     public void printStudentList(){
         for(int i = 0; i < studentList.size(); i++){
             System.out.println("Student Name: " + studentList.get(i).getName());

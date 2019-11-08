@@ -16,6 +16,7 @@ public class StudListRunner
         Scanner kb = new Scanner(System.in);
         String inputStr = "";
         while(!inputStr.equals("quit")){
+            //loading the menu
             System.out.println("Enter a number from the menu or type \"quit\" to quit.");
             System.out.println("1. Add Student\n2. Delete Student\n3. Print Student List");
             System.out.println("4. Search For Student\n5. Clear Student List\n6. Sort Student List);");

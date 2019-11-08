@@ -16,6 +16,7 @@ public class StringCheck
         String inputStr = "";
         String keyword = "";
         System.out.println("Type in a list of words, or type \"done\" to stop adding words.");
+        //adds any inputs to the words arraylist until the user is done
         while(!inputStr.equals("done")){
             inputStr = kb.nextLine();
             words.add(inputStr);
@@ -34,6 +35,8 @@ public class StringCheck
         wordChecker(array, keyword);
     
     }
+    //takes in an array, returns an arraylist of the input words that
+    //contain the keyword
     public static ArrayList<String> wordChecker(String[] str, String key){
         ArrayList<String> list = new ArrayList<String>();
         for(int i = 0; i < str.length; i++){
@@ -46,6 +49,8 @@ public class StringCheck
         }
         return list;
     }
+    //takes in an arraylist, returns an array of the input words that
+    //contain the keyword
     public static String[] wordChecker(ArrayList<String> str, String key){
         String[] list = new String[str.size()];
         for(int i = 0; i < str.size(); i++){
