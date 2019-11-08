@@ -24,6 +24,10 @@ public class Student
         parseUserInput(fullName);
         return (fName + " " + mName + " " + lName);
     }
+    //getter to access a student's last name
+    public String getLName(){
+        return lName;
+    }
     //gettter to access a student's number
     public int getNumber(){
         return stuNumber;

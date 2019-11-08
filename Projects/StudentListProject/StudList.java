@@ -40,12 +40,20 @@ public class StudList
             System.out.println("Student GPA: " + studentList.get(i).getGPA());
         }
     }
-    //public void deleteStudent(String lastName){
-    
-    //}
-    //public void deleteStudent(int stuNumber){
-    
-    //}
+    public void deleteStudent(String lastName){
+         for(int i = 0; i < studentList.size(); i++){
+            if(lastName.equals(studentList.get(i).getLName())){
+                studentList.remove(i);
+            }
+         }
+    }
+    public void deleteStudent(int stuNumber){
+        for(int i = 0; i < studentList.size(); i++){
+            if(stuNumber == studentList.get(i).getNumber()){
+                studentList.remove(i);
+            }
+        }
+    }
     //public void editStudentList(String lastName){
     
     //}

@@ -25,12 +25,14 @@ public class StudListRunner
             if(inputStr.equals("1")){
                 studList.addStudentToList();
             }
+            if(inputStr.equals("2")){
+                System.out.println("Type the last name of the student you want to delete");
+                String lName = kb.nextLine();
+                studList.deleteStudent(lName);
+            }
             if(inputStr.equals("3")){
                 studList.printStudentList();
             }
-            //if(inputStr.equals("2")){
-            //    studList.deleteStudentFromList();
-            //}
         }
       
         
