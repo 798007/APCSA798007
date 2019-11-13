@@ -40,6 +40,7 @@ public class StudList
             System.out.println("Student GPA: " + studentList.get(i).getGPA());
         }
     }
+    //deletes a student based on their last name
     public void deleteStudent(String lastName){
          for(int i = 0; i < studentList.size(); i++){
             if(lastName.equals(studentList.get(i).getLName())){
@@ -47,6 +48,7 @@ public class StudList
             }
          }
     }
+    //deletes a student based on their student number
     public void deleteStudent(int stuNumber){
         for(int i = 0; i < studentList.size(); i++){
             if(stuNumber == studentList.get(i).getNumber()){
@@ -54,34 +56,53 @@ public class StudList
             }
         }
     }
+    //allows the user to edit a student's name or GPA (by entering their last name)
     public void editStudentList(String lastName){
-        System.out.println("Type \"1\" if you want to edit the student's name or type \"2\" if you want to edit their GPA.");
-        Scanner kb = new Scanner(System.in);
-        int inputValue = kb.nextInt();
-        if(inputValue == 1){
-            System.out.println("Enter the student's full updated name: ");
-            String newName = kb.nextLine();
-            for(int i = 0; i < studentList.size(); i++){
-                if(lastName.equals(studentList.get(i).getName())){
-                    //studentList.set(i, newName);
-                    
-                }
+        for(int i = 0; i < studentList.size(); i++){
+            if(lastName.equals(studentList.get(i).getLName())){
+                System.out.println("Student Name: " + studentList.get(i).getName());
+                System.out.println("Student Number: " + studentList.get(i).getNumber());
+                System.out.println("Student GPA: " + studentList.get(i).getGPA());
+                Scanner kb2 = new Scanner(System.in);
+                System.out.println("Enter the student's information to edit it \n Student Name: ");
+                String newName = kb2.nextLine();
+                System.out.println("Student Number: ");
+                int newNum = kb2.nextInt();
+                System.out.println("Student GPA: ");
+                double newGPA = kb2.nextDouble();
+                
+                Student editStudent = new Student(newName, newNum, newGPA);
+                studentList.set(i, editStudent);
             }
-            
-        }
-        if(inputValue == 2){
-            System.out.println("Enter the student's new GPA: ");
         }
     }
-    //public void editStudentList(int stuNumber){
-    
-    // }
+    //allows the user to edit a student's name or GPA (by entering their last name)
+    public void editStudentList(int stuNumber){
+        for(int i = 0; i < studentList.size(); i++){
+            if(stuNumber == studentList.get(i).getNumber()){
+                System.out.println("Student Name: " + studentList.get(i).getName());
+                System.out.println("Student Number: " + studentList.get(i).getNumber());
+                System.out.println("Student GPA: " + studentList.get(i).getGPA());
+                Scanner kb2 = new Scanner(System.in);
+                System.out.println("Enter the student's information to edit it \n Student Name: ");
+                String newName = kb2.nextLine();
+                System.out.println("Student Number: ");
+                int newNum = kb2.nextInt();
+                System.out.println("Student GPA: ");
+                double newGPA = kb2.nextDouble();
+                
+                Student editStudent = new Student(newName, newNum, newGPA);
+                studentList.set(i, editStudent);
+            }
+        }
+    }
+    //clears all students from the student list
     public void clearList(){
        for(int i = 0; i < studentList.size(); i++){
            studentList.remove(i);
        }
     }
-   
+    //prints one student (after the user types their last name)
     public void printStudent(String lastName){
         for(int i = 0; i < studentList.size(); i++){
             if(lastName.equals(studentList.get(i).getLName())){
@@ -91,6 +112,7 @@ public class StudList
             }
         }
     }
+    //prints one student (after the user types their number)
     public void printStudent(int stuNumber){
        for(int i = 0; i < studentList.size(); i++){
             if(stuNumber == studentList.get(i).getNumber()){
@@ -100,20 +122,45 @@ public class StudList
             }
        }
     }
-    //public void sortStudents(String lastName){
-        
-    //}
+    public void sortStudents(String lastName){
+        for(int i = 1; i < studentList.size(); i++){
+            int j = i;
+            while(j > 0 && (studentList.get(j).getLName().compareTo(studentList.get(j-1).getLName()))<0){
+                swapList(j, j-1);
+                j = j-1;
+            }
+        }
+    }
     public void sortStudents(int stuNumber){
         for(int i = 1; i < studentList.size(); i++){
             int j = i;
             while(j > 0 && (studentList.get(j).getNumber() < studentList.get(j-1).getNumber())){
-                int smallerNumber = studentList.get(j).getNumber();
-                //swap
+                swapList(j, j-1);
                 j = j -1;
             }
         }
     }
-    //public ArrayList<Student> filterSearchStudentList(String key){
-    
-    //}
+    public void swapList(int smaller, int bigger){
+        Student temp = studentList.get(smaller);
+        studentList.set(smaller, studentList.get(bigger));
+        studentList.set(bigger, temp);
+    }
+    public ArrayList<Student> filterSearchStudentList(int keyNums){
+        ArrayList<Student> nums = new ArrayList<Student>();
+        for(int i = 0; i < studentList.size(); i++){
+            if(studentList.get(i).getNumber() <= keyNums){
+                nums.add(studentList.get(i));
+            }
+        }
+        return nums;
+    }
+    public ArrayList<Student> filterSearchStudentList(double keyGPA){
+      ArrayList<Student> gpa = new ArrayList<Student>();
+      for(int i = 0; i < studentList.size(); i++){
+            if(studentList.get(i).getGPA() <= keyGPA){
+                gpa.add(studentList.get(i));
+            }
+      }
+      return gpa;
+    }
 }

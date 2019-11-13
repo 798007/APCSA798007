@@ -53,15 +53,23 @@ public class StudListRunner
             
             }
             if(inputStr.equals("7")){
-            
+                System.out.println("Type \"1\" if you want to print a student by their last name or type \"2\" if you want to print them by their number.");
+                int inputValue = kb.nextInt();
+                Scanner kb2 = new Scanner(System.in);
+                if(inputValue == 1){
+                    System.out.println("Type the student's last name");
+                    String lName = kb2.nextLine();
+                    studList.printStudent(lName);
+                }
+                if(inputValue == 2){
+                    System.out.println("Type the student's number");
+                    int num = kb2.nextInt();
+                    studList.printStudent(num);
+                }
             }
             if(inputStr.equals("8")){
             
             }
         }
-      
-        
-    
-    
     }
 }
