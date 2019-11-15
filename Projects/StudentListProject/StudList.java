@@ -151,21 +151,47 @@ public class StudList
     //returns an arraylist of all students whose number is less than or equal to the inputted student number
     public ArrayList<Student> filterSearchStudentList(int keyNums){
         ArrayList<Student> nums = new ArrayList<Student>();
+        int exist = 0;
         for(int i = 0; i < studentList.size(); i++){
             if(studentList.get(i).getNumber() <= keyNums){
-                nums.add(studentList.get(i));
+                Student s = new Student(studentList.get(i).getName(), studentList.get(i).getNumber(), studentList.get(i).getGPA());
+                nums.add(s);
+            }else{
+                exist++;
             }
+        }
+        for(int i = 0; i < nums.size(); i++){
+           System.out.println("Student Name: " + nums.get(i).getName());
+           System.out.println("Student Number: "  + nums.get(i).getNumber());
+           System.out.println("Student GPA: " + nums.get(i).getGPA());
+        }
+        if(exist == studentList.size()){
+            System.out.println("No such student exists.");
         }
         return nums;
     }
     //returns an arraylist of all students whose GPA is less than or equal to the inputted GPA
     public ArrayList<Student> filterSearchStudentList(double keyGPA){
       ArrayList<Student> gpa = new ArrayList<Student>();
+      int exist = 0;
       for(int i = 0; i < studentList.size(); i++){
             if(studentList.get(i).getGPA() <= keyGPA){
-                gpa.add(studentList.get(i));
+                Student s = new Student(studentList.get(i).getName(), studentList.get(i).getNumber(), studentList.get(i).getGPA());
+                gpa.add(s);
+            }else{
+                exist++;
             }
       }
+      for(int i = 0; i < gpa.size(); i++){
+           
+           System.out.println("Student Name: " + gpa.get(i).getName());
+           System.out.println("Student Number: "  + gpa.get(i).getNumber());
+           System.out.println("Student GPA: " + gpa.get(i).getGPA());
+            
+        }
+      if(exist == studentList.size()){
+          System.out.println("No such student exists.");
+        }
       return gpa;
     }
 }
