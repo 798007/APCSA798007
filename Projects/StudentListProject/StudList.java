@@ -76,7 +76,7 @@ public class StudList
             }
         }
     }
-    //allows the user to edit a student's name or GPA (by entering their last name)
+    //allows the user to edit a student's name or GPA (by entering their number)
     public void editStudentList(int stuNumber){
         for(int i = 0; i < studentList.size(); i++){
             if(stuNumber == studentList.get(i).getNumber()){
@@ -122,6 +122,7 @@ public class StudList
             }
        }
     }
+    //sorts student list in alpahbetical order based on last name
     public void sortStudents(String lastName){
         for(int i = 1; i < studentList.size(); i++){
             int j = i;
@@ -131,6 +132,7 @@ public class StudList
             }
         }
     }
+    //sorts student list in numerical order based in student number
     public void sortStudents(int stuNumber){
         for(int i = 1; i < studentList.size(); i++){
             int j = i;
@@ -140,11 +142,13 @@ public class StudList
             }
         }
     }
+    //code for swapping students in the student list
     public void swapList(int smaller, int bigger){
         Student temp = studentList.get(smaller);
         studentList.set(smaller, studentList.get(bigger));
         studentList.set(bigger, temp);
     }
+    //returns an arraylist of all students whose number is less than or equal to the inputted student number
     public ArrayList<Student> filterSearchStudentList(int keyNums){
         ArrayList<Student> nums = new ArrayList<Student>();
         for(int i = 0; i < studentList.size(); i++){
@@ -154,6 +158,7 @@ public class StudList
         }
         return nums;
     }
+    //returns an arraylist of all students whose GPA is less than or equal to the inputted GPA
     public ArrayList<Student> filterSearchStudentList(double keyGPA){
       ArrayList<Student> gpa = new ArrayList<Student>();
       for(int i = 0; i < studentList.size(); i++){
