@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\n\ Student\n\n\ @author\ (Emily\ Greene)\n\ @version\ (1025)\n
+comment0.text=\r\n\ Student\r\n\r\n\ @author\ (Emily\ Greene)\r\n\ @version\ (1025)\r\n
 comment1.params=name\ num\ GPA
 comment1.target=Student(java.lang.String,\ int,\ double)
 comment2.params=
