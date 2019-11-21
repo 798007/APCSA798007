@@ -20,7 +20,7 @@ public class StudListRunner
             //loading the menu
             System.out.println("Enter a number from the menu or type \"quit\" to quit.");
             System.out.println("1. Add Student\n2. Delete Student\n3. Print Student List");
-            System.out.println("4. Search For Student\n5. Clear Student List\n6. Sort Student List);");
+            System.out.println("4. Search For Student\n5. Clear Student List\n6. Sort Student List;");
             System.out.println("7. Print 1 Student\n8. Edit Student List");
             inputStr = kb.nextLine();
             if(inputStr.equals("1")){ //add student
@@ -67,14 +67,10 @@ public class StudListRunner
                 int inputValue = kb.nextInt();
                 Scanner kb2 = new Scanner(System.in);
                 if(inputValue == 1){
-                    System.out.println("Type the student's last name");
-                    String lName = kb2.nextLine();
-                    studList.sortStudents(lName);
+                    studList.sortStudents("LastName");
                 }
                 if(inputValue == 2){
-                    System.out.println("Type the student's number");
-                    int num = kb2.nextInt();
-                    studList.sortStudents(num);
+                    studList.sortStudents(1);
                 }
             }
             if(inputStr.equals("7")){ //print 1 student

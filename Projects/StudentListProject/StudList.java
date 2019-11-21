@@ -10,8 +10,9 @@ public class StudList
     ArrayList<Student> studentList = new ArrayList<Student>();
     public StudList()
     {
-       
-    }
+
+    }  
+
     public void addStudentToList(){
         Scanner kb = new Scanner(System.in);
         String inputName = "";
@@ -20,13 +21,13 @@ public class StudList
         //gets input information for each students' name, number, and gpa
         System.out.println("Student Name: ");
         inputName = kb.nextLine();
-        
+
         System.out.println("Student Number: ");
         inputNumber = kb.nextInt();
-        
+
         System.out.println("Student GPA: ");
         inputGPA = kb.nextDouble();
-        
+
         //creates a new student object loaded with the name, number, and gpa
         Student student = new Student(inputName, inputNumber, inputGPA);
         //adds the new student object to the arraylist of student objects
@@ -38,15 +39,16 @@ public class StudList
             System.out.println("Student Name: " + studentList.get(i).getName());
             System.out.println("Student Number: "  + studentList.get(i).getNumber());
             System.out.println("Student GPA: " + studentList.get(i).getGPA());
+            System.out.println();
         }
     }
     //deletes a student based on their last name
     public void deleteStudent(String lastName){
-         for(int i = 0; i < studentList.size(); i++){
+        for(int i = 0; i < studentList.size(); i++){
             if(lastName.equals(studentList.get(i).getLName())){
                 studentList.remove(i);
             }
-         }
+        }
     }
     //deletes a student based on their student number
     public void deleteStudent(int stuNumber){
@@ -70,7 +72,7 @@ public class StudList
                 int newNum = kb2.nextInt();
                 System.out.println("Student GPA: ");
                 double newGPA = kb2.nextDouble();
-                
+
                 Student editStudent = new Student(newName, newNum, newGPA);
                 studentList.set(i, editStudent);
             }
@@ -90,7 +92,7 @@ public class StudList
                 int newNum = kb2.nextInt();
                 System.out.println("Student GPA: ");
                 double newGPA = kb2.nextDouble();
-                
+
                 Student editStudent = new Student(newName, newNum, newGPA);
                 studentList.set(i, editStudent);
             }
@@ -98,9 +100,9 @@ public class StudList
     }
     //clears all students from the student list
     public void clearList(){
-       for(int i = 0; i < studentList.size(); i++){
-           studentList.remove(i);
-       }
+        for(int i = 0; i < studentList.size(); i++){
+            studentList.remove(i);
+        }
     }
     //prints one student (after the user types their last name)
     public void printStudent(String lastName){
@@ -114,18 +116,18 @@ public class StudList
     }
     //prints one student (after the user types their number)
     public void printStudent(int stuNumber){
-       for(int i = 0; i < studentList.size(); i++){
+        for(int i = 0; i < studentList.size(); i++){
             if(stuNumber == studentList.get(i).getNumber()){
                 System.out.println("Student Name: " + studentList.get(i).getName());
                 System.out.println("Student Number: "  + studentList.get(i).getNumber());
                 System.out.println("Student GPA: " + studentList.get(i).getGPA());
             }
-       }
+        }
     }
     //sorts student list in alpahbetical order based on last name
     public void sortStudents(String lastName){
         for(int i = 1; i < studentList.size(); i++){
-            int j = i;
+             int j = i;
             while(j > 0 && (studentList.get(j).getLName().compareTo(studentList.get(j-1).getLName()))<0){
                 swapList(j, j-1);
                 j = j-1;
@@ -161,9 +163,9 @@ public class StudList
             }
         }
         for(int i = 0; i < nums.size(); i++){
-           System.out.println("Student Name: " + nums.get(i).getName());
-           System.out.println("Student Number: "  + nums.get(i).getNumber());
-           System.out.println("Student GPA: " + nums.get(i).getGPA());
+            System.out.println("Student Name: " + nums.get(i).getName());
+            System.out.println("Student Number: "  + nums.get(i).getNumber());
+            System.out.println("Student GPA: " + nums.get(i).getGPA());
         }
         if(exist == studentList.size()){
             System.out.println("No such student exists.");
@@ -172,26 +174,26 @@ public class StudList
     }
     //returns an arraylist of all students whose GPA is less than or equal to the inputted GPA
     public ArrayList<Student> filterSearchStudentList(double keyGPA){
-      ArrayList<Student> gpa = new ArrayList<Student>();
-      int exist = 0;
-      for(int i = 0; i < studentList.size(); i++){
+        ArrayList<Student> gpa = new ArrayList<Student>();
+        int exist = 0;
+        for(int i = 0; i < studentList.size(); i++){
             if(studentList.get(i).getGPA() <= keyGPA){
                 Student s = new Student(studentList.get(i).getName(), studentList.get(i).getNumber(), studentList.get(i).getGPA());
                 gpa.add(s);
             }else{
                 exist++;
             }
-      }
-      for(int i = 0; i < gpa.size(); i++){
-           
-           System.out.println("Student Name: " + gpa.get(i).getName());
-           System.out.println("Student Number: "  + gpa.get(i).getNumber());
-           System.out.println("Student GPA: " + gpa.get(i).getGPA());
-            
         }
-      if(exist == studentList.size()){
-          System.out.println("No such student exists.");
+        for(int i = 0; i < gpa.size(); i++){
+
+            System.out.println("Student Name: " + gpa.get(i).getName());
+            System.out.println("Student Number: "  + gpa.get(i).getNumber());
+            System.out.println("Student GPA: " + gpa.get(i).getGPA());
+
         }
-      return gpa;
+        if(exist == studentList.size()){
+            System.out.println("No such student exists.");
+        }
+        return gpa;
     }
 }
