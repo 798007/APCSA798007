@@ -100,5 +100,35 @@ public class IntArrayWorker
       }
     }
   }
- 
+  //returns the count of the number of times a passed integer value is found in the matrix
+  public int getCount(int x){
+    int count = 0;
+    for(int r = 0; r < matrix.length; r++){
+        for(int c = 0; c < matrix[r].length; c++){
+            if(matrix[r][c] == x){
+                count++;
+            }
+        }
+    }
+    return count;
+  }
+  //returns the largest vaule in the matrix
+  public int getLargest(){
+    int greatestVal = 0;
+    for(int r = 0; r < matrix.length; r++){
+        for(int c = 0; c < matrix[r].length; c++){
+            if(matrix[r][c] > greatestVal){
+                greatestVal = matrix[r][c];
+            }
+        }
+    }
+    return greatestVal;
+  }
+  public int getColTotal(int x){
+    int total = 0;
+    for(int r = 0; r < matrix.length; r++){
+        total = total + matrix[r][x];
+    }
+    return total;
+  }
 }
