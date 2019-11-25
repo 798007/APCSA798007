@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=GridTester
-comment0.text=\r\n\ GridTester\r\n\r\n\ @author\ (Emily\ Greene)\r\n\ @version\ (1115)\r\n
+comment0.text=\n\ GridTester\n\n\ @author\ (Emily\ Greene)\n\ @version\ (1115)\n
 comment1.params=
 comment1.target=GridTester()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GridTester\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GridTester\n
 comment2.params=
 comment2.target=void\ main()
 comment3.params=

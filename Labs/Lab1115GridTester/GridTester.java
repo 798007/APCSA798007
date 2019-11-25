@@ -22,6 +22,7 @@ public class GridTester
     public static void main(){
         GridTester test = new GridTester();
     }
+    //makes a 2D array of random integers between 1 and 100
     public void loadArray(){
         for(int r = 0; r < mat.length; r++){
             for(int c = 0; c < mat[r].length; c++){
@@ -29,6 +30,7 @@ public class GridTester
             }
         }
     }
+    //prints out the array onto the console
     public void printArray(){
         loadArray();
         for(int r = 0; r < mat.length; r++){
@@ -38,6 +40,7 @@ public class GridTester
             System.out.println();
         }
     }
+    //returns the sum of every number in the 2D array
     public int sumAll(){
         int sum = 0;
         for(int r = 0; r < mat.length; r++){
@@ -47,6 +50,7 @@ public class GridTester
         }
         return sum;
     }
+    //finds the biggest number in the entire array
     public int findGreatest(){
         int greatestVal = 0;
         for(int r = 0; r < mat.length; r++){
@@ -58,6 +62,7 @@ public class GridTester
         }
         return greatestVal;
     }
+    //finds the amount of times the greatest number appears in teh array
     public int numberOfGreatest(){
         int numGreatest = 0;
         int greatestVal = findGreatest();
@@ -70,6 +75,7 @@ public class GridTester
         }
         return numGreatest;
     }
+    //finds the average of all the numbers in the array
     public double findAvg(){
         int sum = sumAll();
         return sum/100;
