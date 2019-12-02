@@ -166,13 +166,43 @@ public class Picture extends SimplePicture
     {
       for (int col = 0; col < width / 2; col++)
       {
-        leftPixel = pixels[row][col];
-        rightPixel = pixels[row][width - 1 - col];
+        rightPixel = pixels[row][col];
+        leftPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
-    
-    
+  }
+  
+  public void mirrorHorizontal(){
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int height = pixels.length;
+    for (int row = 0; row < height / 2; row++)
+    {
+      for (int col = 0; col < pixels[row].length; col++)
+      {
+        bottomPixel = pixels[height - 1 - row][col];
+        topPixel = pixels[row][col];
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
+  }
+  
+  public void mirrorHorizontalBotToTop(){
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int height = pixels.length;
+    for (int row = 0; row < height / 2; row++)
+    {
+      for (int col = 0; col < pixels[row].length; col++)
+      {
+        topPixel = pixels[height - 1 - row][col];
+        bottomPixel = pixels[row][col];
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
   }
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
@@ -194,9 +224,71 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+        count++;
       }
+      System.out.println(count);
     }
   }
+  
+  public void mirrorArms(){
+    int mirrorPoint = 187;
+    int mirrorPoint2 = 195;
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 157; row < mirrorPoint; row++)
+    {
+      // loop from 105 to 171
+      for (int col = 105; col < 171; col++)
+      {
+        
+        bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];      
+        topPixel = pixels[row][col];
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
+    
+    for (int row = 170; row < mirrorPoint2; row++)
+    {
+      // loop from 235 to 293
+      for (int col = 235; col < 293; col++)
+      {
+        
+        bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];      
+        topPixel = pixels[row][col];
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
+    
+  }
+  
+  public void mirrorGull(){
+    int mirrorPoint = 346;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 234; row < 320; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 238; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+        
+      }
+      
+    }
+    
+  }
+  
   
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
@@ -219,6 +311,30 @@ public class Picture extends SimplePicture
     {
       for (int fromCol = 0, toCol = startCol; 
            fromCol < fromPixels[0].length &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
+  
+  public void copy(Picture fromPic, 
+                 int startRow, int endRow, int startCol, int endCol)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = 0, toRow = startRow; 
+         fromRow < endRow &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = 0, toCol = startCol; 
+           fromCol < endCol &&
            toCol < toPixels[0].length;  
            fromCol++, toCol++)
       {
