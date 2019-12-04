@@ -137,6 +137,22 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void fixUnderwater(){
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getBlue() >= 150 & pixelObj.getRed() <= 23){
+          pixelObj.setRed((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+          pixelObj.setGreen((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+          pixelObj.setBlue((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+        }
+      }
+    }
+    
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -203,6 +219,24 @@ public class Picture extends SimplePicture
         bottomPixel.setColor(topPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorDiagonal(){
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int height = pixels.length;
+    int width = pixels[0].length;
+    for (int row = 0; row < height; row++)
+    {
+       for (int col = 0; col < pixels[row].length; col++)
+       {
+          leftPixel = pixels[row][col];
+          rightPixel = pixels[height - 1 - row][width - 1 - col];
+          rightPixel.setColor(leftPixel.getColor());
+       }
+    }
+    
   }
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
