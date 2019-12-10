@@ -379,6 +379,40 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+  public void mirrorVertical(int startRow, int endRow, int startCol, int endCol){
+    int mirrorPoint = (startCol+endCol)/2;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = startRow; row < endRow; row++)
+    {
+      // loop from start column to just before the mirror point
+      for (int col = startCol; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+        
+      }
+      
+    }
+    
+    
+    }
+  
+  public void myCollage(Picture fromPic, Picture toPic){
+      copy(fromPic, toPic, 0, 222, 334, 0, 203, 347);
+      fromPic.zeroBlue();
+      copy(fromPic, toPic, 150, 222, 334, 150, 203, 347);
+      fromPic.grayscale();
+      toPic.mirrorVertical(0, 112, 0, 143);
+      copy(fromPic, toPic, 300, 222, 334, 300, 203, 347);
+  }
 
   /** Method to create a collage of several pictures */
   public void createCollage()
@@ -424,6 +458,30 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void edgeDetection2(int edgeDist){
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color bottomColor = null;
+    for (int row = 0; row < pixels.length - 1; row++)
+    {
+        for (int col = 0; 
+           col < pixels[0].length; col++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[row+1][col];
+        bottomColor = bottomPixel.getColor();
+        if (topPixel.colorDistance(bottomColor) > 
+            edgeDist)
+          topPixel.setColor(Color.BLACK);
+        else
+          topPixel.setColor(Color.WHITE);
+      }
+    }
+    
+    
+    
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
