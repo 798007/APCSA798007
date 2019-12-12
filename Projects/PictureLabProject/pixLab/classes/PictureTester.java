@@ -18,7 +18,7 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
-  
+  //method to test keepOnlyBlue
   public static void testKeepOnlyBlue()
   {
     Picture beach = new Picture("beach.jpg");
@@ -26,21 +26,37 @@ public class PictureTester
     beach.keepOnlyBlue();
     beach.explore();
   }
-  
+  //method to test keepOnlyRed
+  public static void testKeepOnlyRed()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyRed();
+    beach.explore();
+  }
+  //method to test keepOnlyGreen
+  public static void testKeepOnlyGreen()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyGreen();
+    beach.explore();
+  }
+  //method to test negate
   public static void testNegate(){
     Picture beach = new Picture("beach.jpg");
     beach.explore();
     beach.negate();
     beach.explore();
   }
-  
+  //method to test grayscale
   public static void testGrayscale(){
     Picture beach = new Picture("beach.jpg");
     beach.explore();
     beach.grayscale();
     beach.explore();
   }
-  
+  //method to test fixUnderwater
   public static void testFixUnderwater(){
     Picture water = new Picture("water.jpg");
     water.explore();
@@ -55,7 +71,7 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  
+  //method to test mirrorVerticalRightToLeft
   public static void testMirrorVerticalRightToLeft()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -63,7 +79,7 @@ public class PictureTester
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
-  
+  //method to test mirrorHorizontal
   public static void testMirrorHorizontal(){
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
@@ -71,7 +87,7 @@ public class PictureTester
     caterpillar.explore();
     
   }
-  
+  //method to test MirrorHorizontalBotToTop
   public static void testMirrorHorizontalBotToTop(){
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
@@ -79,7 +95,7 @@ public class PictureTester
     caterpillar.explore();
     
   }
-  
+  //methd to test mirrorDiagonal
   public static void testMirrorDiagonal(){
     Picture beach = new Picture("beach.jpg");
     beach.explore();
@@ -95,14 +111,14 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
-  
+  //method to test mirrorArms
   public static void testMirrorArms(){
     Picture snowman = new Picture("snowman.jpg");
     snowman.explore();
     snowman.mirrorArms();
     snowman.explore();
   }
-  
+  //method to test mirrorGull
   public static void testMirrorGull(){
     Picture seagull = new Picture("seagull.jpg");
     seagull.explore();
@@ -116,7 +132,7 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
-  
+  //method to test copy
   public static void testCopy(){
     Picture seagull = new Picture("seagull.jpg");
     Picture canvas = new Picture("640x480.jpg");
@@ -124,7 +140,7 @@ public class PictureTester
     seagull.copy(seagull, canvas, 0, 222, 334, 0, 203, 347);
     canvas.explore();
   }
-  
+  //method to test myCollage
   public static void testMyCollage(){
     Picture seagull = new Picture("seagull.jpg");
     Picture canvas = new Picture("640x480.jpg");
@@ -139,7 +155,7 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+  //method to test edgeDectection2
   public static void testEdgeDetection2(){
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection2(10);
