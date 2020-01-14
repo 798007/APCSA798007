@@ -39,17 +39,23 @@ objectbench.height=109
 objectbench.width=1022
 package.divider.horizontal=0.6
 <<<<<<< HEAD
+<<<<<<< HEAD
 package.divider.vertical=0.8474341192787794
 package.editor.height=604
 package.editor.width=916
 package.editor.x=778
 package.editor.y=280
 =======
+=======
+>>>>>>> 6737a3da1d62450c4eb34dd2f1168c6a79f4a097
 package.divider.vertical=0.8479685452162516
 package.editor.height=640
 package.editor.width=920
 package.editor.x=384
 package.editor.y=23
+<<<<<<< HEAD
+>>>>>>> 6737a3da1d62450c4eb34dd2f1168c6a79f4a097
+=======
 >>>>>>> 6737a3da1d62450c4eb34dd2f1168c6a79f4a097
 package.frame.height=821
 package.frame.width=1046
