@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Final
+comment0.text=\n\ Write\ a\ description\ of\ class\ Final\ here.\n\n\ @author\ (Emily\ Greene)\n\ @version\ (1216)\n
+comment1.params=
+comment1.target=Final()
+comment2.params=
+comment2.target=void\ main()
+comment3.params=
+comment3.target=void\ loop()
+comment4.params=
+comment4.target=void\ loop2()
+comment5.params=minNum\ maxNum
+comment5.target=void\ numberCheck(int,\ int)
+comment6.params=
+comment6.target=void\ strings()
+comment7.params=num
+comment7.target=void\ toTheMax(int)
+comment8.params=arr
+comment8.target=int\ loadNums(int[][])
+numComments=9
