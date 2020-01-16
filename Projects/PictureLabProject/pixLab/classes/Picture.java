@@ -469,13 +469,13 @@ public class Picture extends SimplePicture
         rightColor = rightPixel.getColor();
         if (leftPixel.colorDistance(rightColor) > 
             edgeDist){
-          leftPixel.setRed(leftPixel.getRed()-15);
+          //leftPixel.setRed(leftPixel.getRed()-50);
           leftPixel.setBlue(leftPixel.getBlue()-15);
-          leftPixel.setGreen(leftPixel.getGreen()-15);
+          //leftPixel.setGreen(leftPixel.getGreen()-15);
         }else{
-          leftPixel.setRed(leftPixel.getRed()+15);
-          leftPixel.setBlue(leftPixel.getBlue()+15);
-          leftPixel.setGreen(leftPixel.getGreen()+15);
+          //leftPixel.setRed(leftPixel.getRed()+50);
+          leftPixel.setBlue(leftPixel.getBlue()+50);
+          //leftPixel.setGreen(leftPixel.getGreen()+50);
         }
       }
     }
